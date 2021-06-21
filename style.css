@@ -8,9 +8,131 @@
 }
 
 body{
-    background-image: );
+    background: #007bff;
 }
 
-.start_btn{
-
+.start_btn,
+.info_caixa, 
+.caixa_quiz{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+/* Estilizando o botão de Start */
+.start_btn button{
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.info_caixa{
+    display: none;
+    width: 740px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.info_caixa .info_titulo{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info_caixa .info_lista{
+    padding: 15px 35px;
+}
+
+.info_caixa .info_lista .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+ .info_lista .info span{
+    font-weight: 600;
+    color: #007bff;
+}
+
+.info_caixa .botoes{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: solid lightgray;
+}
+
+.info_caixa .botoes button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botoes button.reiniciar{
+    color: #fff;
+    background: #007bff;
+}
+
+.botoes button.reiniciar:hover{
+    background: #0263ca;
+}
+
+.botoes button.sair{
+    color: #007bff;
+}
+
+.botoes button.sair:hover{
+    color: #fff;
+    background: #007bff;
+}
+
+.caixa_quiz{
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.caixa_quiz header{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

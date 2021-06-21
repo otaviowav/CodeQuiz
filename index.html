@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="style.css"
-    <!-- FontAwesome CDN Link for Icons -->
+    <!-- FontAwesome CDN Link for Icons-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -15,10 +15,10 @@
     
     <!-- Info box-->
     <div class="info_caixa">
-        <div class="Info_titulo">
+        <div class="info_titulo">
             <span>Regras do Quiz</span>
         </div>
-        <div class="info_list">
+        <div class="info_lista">
             <div class="info">1. Você terá apenas <span>15 segundos</span> para cada pergunta.</div>
             <div class="info">2. Uma vez selecionada a questão, não poderá ser selecionada outra.</div>
             <div class="info">3. Quando o tempo se esgotar, nenhuma questão poderá ser selecionada.</div>
@@ -27,8 +27,48 @@
         </div>
         <div class="botoes">
             <button class="sair">Sair do Quiz</button>
-            <button class="Reiniciar">Continue</button>
+            <button class="reiniciar">Continue</button>
         </div>
+    </div>
+
+    <!-- Caixa do Quiz -->
+    <div class="caixa_quiz">
+        <header>
+            <div class="titulo">Quiz Code</div>
+            <div class="tempo">
+                <div class="tempo_texto">Tempo restante</div>
+                <div class="tempo_sec">15</div>
+            </div>
+        </header>
+        <section>
+            <div class="questao_texto">
+                <span>What does HTML stand for?</span>
+            </div>
+            <div class="lista_de_opcao">
+                <div class="opcao">
+                    <span>Hyper Text Preprocessor</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="opcao">
+                    <span>Hyper Text Markup Language</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="opcao">
+                    <span>Hyper Text Multiple Language</span>
+                </div>
+                <div class="opcao">
+                    <span>Hyper Tool Multi Language</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Box Footer -->
+        <footer>
+            <div class="total_questoes">
+                <span><p>2</p>de<p>5</p>Perguntas</span>
+            </div>
+            <button class="proximo_btn">Próxima</button>
+        </footer>
     </div>
 
 
