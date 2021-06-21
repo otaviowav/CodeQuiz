@@ -112,8 +112,139 @@ body{
 }
 
 .caixa_quiz header{
+    position: relative;
+    z-index: 99;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.caixa_quiz header .titulo{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.caixa_quiz header .tempo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 45px;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+.caixa_quiz header .tempo .tempo_texto{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.caixa_quiz header .tempo .tempo_segundo{
+    font-size: 18px;
+    font-weight: 500;
+    background: #343a40;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+.caixa_quiz section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+
+}
+
+.caixa_quiz section .questao_texto{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.caixa_quiz section .lista_de_opcao{
+    padding: 20px 0;
+    display: block;
+}
+
+section .lista_de_opcao .opcao{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section .lista_de_opcao .opcao:hover{
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+.lista_de_opcao .opcao:last-child{
+    margin-bottom: 0px;
+}
+
+.lista_de_opcao .opcao .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    pointer-events: none;
+}
+
+.lista_de_opcao .opcao .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.lista_de_opcao .opcao .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
     
 }
+
+.caixa_quiz footer{
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caixa_quiz footer .total_questoes span{
+    display: flex;
+    user-select: none;
+}
+
+footer .total_questoes span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+
 
 
 
