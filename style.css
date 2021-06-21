@@ -106,6 +106,7 @@ body{
 }
 
 .caixa_quiz{
+    display: none;
     width: 550px;
     background: #fff;
     border-radius: 5px;
@@ -243,6 +244,31 @@ footer .total_questoes span p{
     font-weight: 500;
     padding: 0 5px;
 }
+
+.total_questoes span p:first-child{
+    padding-left: 0px;
+}
+
+footer .proximo_btn{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: nome;
+    outline: none;
+    color: #fff;
+    background: #007bff;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .proximo_btn:hover{
+    background: #0263ca;
+}
+
+
 
 
 
