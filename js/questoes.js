@@ -38,7 +38,7 @@ let questions = [
         question: "HTML é a sigla para que palavras da língua inglesa?",
         answer: "HyperText Markup Language",
         options: [
-            "HynerTarget Markup Layout",
+            "HyperTarget Markup Layout",
             "HyperText Much Large",
             "HyperText Markup Language",
             "HyperText Montup Layout"
@@ -58,12 +58,12 @@ let questions = [
     {
         numb: 6,
         question: "O que significa a sigla “www” na internet?",
-        answer: "World wide web",
+        answer: "World Wide Web",
         options: [
-            "Web world wide",
-            "Web wide world",
-            "World wide web",
-            "Wide web world"
+            "Web World Wide",
+            "Web Wide World",
+            "World Wide Web",
+            "Wide Web World"
         ]
     },
     {
