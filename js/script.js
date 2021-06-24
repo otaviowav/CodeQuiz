@@ -78,7 +78,7 @@ function showQuestions(index) {
     const questao_texto = document.querySelector(".questao_texto");
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let option_tag = '<div class="opcao">' + questions[index].options[0] + '<span></span></div>'
-        + '<div class="opcrowncao">' + questions[index].options[1] + '<span></span></div>'
+        + '<div class="opcao">' + questions[index].options[1] + '<span></span></div>'
         + '<div class="opcao">' + questions[index].options[2] + '<span></span></div>'
         + '<div class="opcao">' + questions[index].options[3] + '<span></span></div>'
     questao_texto.innerHTML = que_tag;
