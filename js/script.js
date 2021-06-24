@@ -7,7 +7,7 @@ const caixa_quiz = document.querySelector(".caixa_quiz");
 const lista_de_opcao = document.querySelector(".lista_de_opcao")
 const timeCount = caixa_quiz.querySelector(".tempo .tempo_segundo");
 const linhaTempo = caixa_quiz.querySelector("header .linha_tempo");
-
+const timeOff = caixa_quiz.querySelector("header .tempo_texto");
 
 // Ação do botão Start
 start_btn.onclick = () => {
@@ -32,6 +32,7 @@ reiniciar.onclick = () => {
 let contQuestoes = 0;
 let numQuestao = 1;
 let counter;
+let counterLine;
 let valorTempo = 15;
 let widthValue = 0;
 let userScore = 0;
@@ -41,6 +42,28 @@ const proximo_btn = caixa_quiz.querySelector(".proximo_btn");
 const caixa_de_resultado = document.querySelector(".caixa_de_resultado");
 const reiniciar_quiz = caixa_de_resultado.querySelector(".botoes .reiniciar");
 const sair_quiz = caixa_de_resultado.querySelector(".botoes .sair");
+
+reiniciar_quiz.onclick = ()=>{
+    caixa_de_resultado.classList.remove("activeResult");
+    caixa_quiz.classList.add("activeQuiz");
+    let contQuestoes = 0;
+    let numQuestao = 1;
+    let valorTempo = 15;
+    let widthValue = 0;
+    let userScore = 0;
+    showQuestions(contQuestoes);
+    questCont(numQuestao);
+    clearInterval(counter)
+    startTimer(valorTempo);
+    clearInterval(counterLine)
+    startTimerLine(widthValue);
+    proximo_btn.style.display = "none"; 
+    timeOff.textContent = "Tempo restante";
+}
+
+sair_quiz.onclick = ()=>{
+    window.location.reload();
+}
 
 // Ação do botão "Proxima"
 proximo_btn.onclick = () => {
@@ -54,7 +77,10 @@ proximo_btn.onclick = () => {
         clearInterval(counterLine)
         startTimerLine(widthValue);
         proximo_btn.style.display = "none";
+        timeOff.textContent = "Tempo restante";
     } else {
+        clearInterval(counter)
+        clearInterval(counterLine)
         console.log("Quiz completado");
         showResultBox();
     }
@@ -109,8 +135,7 @@ let crossIcon = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
         // Desabilitando as outras questões após alguma ser selecionada
         for (let i = 0; i < alloptions; i++) {
-            lista_de_opcao.children[i].classList.add("desabilitado")
-            
+            lista_de_opcao.children[i].classList.add("desabilitado");
         }
         proximo_btn.style.display = "block";
     }
@@ -120,18 +145,18 @@ function showResultBox(){
     caixa_quiz.classList.remove("activeQuiz"); // Fechar a caixa do Quiz
     caixa_de_resultado.classList.add("activeResult"); // Mostrar a caixa de resultado
     const scoreText = caixa_de_resultado.querySelector(".score_do_teste");
-    if(userScore > 3){
-        let scoreTag = '<span>Parabéns, pequeno Padawan! você obteve <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
+    if(userScore > 5){
+        let scoreTag = '<span>Parabéns, pequeno Padawan! você obteve <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
         scoreText.innerHTML = scoreTag;
     }
-    else if(userScore > 1){
-        let scoreTag = '<span>Humm, legal mas você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
+    else if(userScore <= 5){
+        let scoreTag = '<span>Legal jovem gafanhoto, mas você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
         scoreText.innerHTML = scoreTag;
     }
-    else{
-        let scoreTag = '<span>Sinto muito gafanhoto, você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
-    }
+ //   else{
+ //       let scoreTag = '<span>Sinto muito gafanhoto, você obteve apenas <p>'+ userScore //+'</p> de <p>'+ questions.length +'</p></span>';
+ //       scoreText.innerHTML = scoreTag;
+ //   }
 }
 
 function startTimer(time){
@@ -146,6 +171,21 @@ function startTimer(time){
         if(time < 0){
             clearInterval(counter)
             timeCount.textContent = "00";
+            timeOff.textContent = "Tempo esgotado";
+
+            let respCorreta = questions[contQuestoes].answer;
+            let alloptions = lista_de_opcao.children.length;
+
+            for(let i = 0; i < alloptions; i++) {
+                if(lista_de_opcao.children[i].textContent == respCorreta){
+                    lista_de_opcao.children[i].setAttribute("class", "opcao correta");
+                    lista_de_opcao.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                }
+            }
+            for (let i = 0; i < alloptions; i++) {
+                lista_de_opcao.children[i].classList.add("desabilitado");
+            }
+            proximo_btn.style.display = "block";
         }
     }
 }
