@@ -28,7 +28,8 @@ body{
 }
 
 .info_caixa.activeInfo,
-.caixa_quiz.activeQuiz{
+.caixa_quiz.activeQuiz,
+.caixa_de_resultado.activeResult{
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -183,6 +184,14 @@ body{
     user-select: none;
 }
 
+.caixa_quiz header .linha_tempo{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+
 .caixa_quiz section{
     padding: 25px 30px 20px 30px;
     background: #fff;
@@ -287,6 +296,7 @@ footer .total_questoes span p{
 }
 
 footer .proximo_btn{
+    display: none;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
@@ -307,7 +317,7 @@ footer .proximo_btn:hover{
 
 .caixa_de_resultado{
     background: #fff;
-    width: 450px;
+    width: 700px;
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
