@@ -5,7 +5,7 @@ O CodeQuiz é um pequeno site de perguntas relacionado a Tecnologia
  
 O foco deste projeto tem como objetivo o estudo em HTML5, CSS3 e JavaScript.
  
-Link: 
+Link: https://otaviowav.github.io/CodeQuiz/
  
 #### Desenvolvido utilizando as linguagens e ferramentas abaixo:
 <div style="display: inline_block">
