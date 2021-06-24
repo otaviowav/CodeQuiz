@@ -4,7 +4,7 @@ const info_caixa = document.querySelector(".info_caixa");
 const sair = info_caixa.querySelector(".botoes .sair");
 const reiniciar = info_caixa.querySelector(".botoes .reiniciar");
 const caixa_quiz = document.querySelector(".caixa_quiz");
-const lista_de_opcao = document.querySelector(".lista_de_opcao")
+const lista_de_opcao = document.querySelector(".lista_de_opcao");
 const timeCount = caixa_quiz.querySelector(".tempo .tempo_segundo");
 const linhaTempo = caixa_quiz.querySelector("header .linha_tempo");
 const timeOff = caixa_quiz.querySelector("header .tempo_texto");
@@ -43,24 +43,10 @@ const caixa_de_resultado = document.querySelector(".caixa_de_resultado");
 const reiniciar_quiz = caixa_de_resultado.querySelector(".botoes .reiniciar");
 const sair_quiz = caixa_de_resultado.querySelector(".botoes .sair");
 
-reiniciar_quiz.onclick = ()=>{
-    caixa_de_resultado.classList.remove("activeResult");
-    caixa_quiz.classList.add("activeQuiz");
-    let contQuestoes = 0;
-    let numQuestao = 1;
-    let valorTempo = 15;
-    let widthValue = 0;
-    let userScore = 0;
-    showQuestions(contQuestoes);
-    questCont(numQuestao);
-    clearInterval(counter)
-    startTimer(valorTempo);
-    clearInterval(counterLine)
-    startTimerLine(widthValue);
-    proximo_btn.style.display = "none"; 
-    timeOff.textContent = "Tempo restante";
-}
 
+reiniciar_quiz.onclick = ()=>{
+    window.location.reload();
+}
 sair_quiz.onclick = ()=>{
     window.location.reload();
 }
@@ -72,15 +58,15 @@ proximo_btn.onclick = () => {
         numQuestao++;
         showQuestions(contQuestoes);
         questCont(numQuestao);
-        clearInterval(counter)
+        clearInterval(counter);
         startTimer(valorTempo);
-        clearInterval(counterLine)
+        clearInterval(counterLine);
         startTimerLine(widthValue);
         proximo_btn.style.display = "none";
         timeOff.textContent = "Tempo restante";
     } else {
-        clearInterval(counter)
-        clearInterval(counterLine)
+        clearInterval(counter);
+        clearInterval(counterLine);
         console.log("Quiz completado");
         showResultBox();
     }
@@ -89,10 +75,10 @@ proximo_btn.onclick = () => {
 
 // Obtendo as questões e opções do Array
 function showQuestions(index) {
-    const questao_texto = document.querySelector(".questao_texto")
+    const questao_texto = document.querySelector(".questao_texto");
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
     let option_tag = '<div class="opcao">' + questions[index].options[0] + '<span></span></div>'
-        + '<div class="opcao">' + questions[index].options[1] + '<span></span></div>'
+        + '<div class="opcrowncao">' + questions[index].options[1] + '<span></span></div>'
         + '<div class="opcao">' + questions[index].options[2] + '<span></span></div>'
         + '<div class="opcao">' + questions[index].options[3] + '<span></span></div>'
     questao_texto.innerHTML = que_tag;
@@ -150,13 +136,9 @@ function showResultBox(){
         scoreText.innerHTML = scoreTag;
     }
     else if(userScore <= 5){
-        let scoreTag = '<span>Legal jovem gafanhoto, mas você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
+        let scoreTag = '<span>Sinto muito jovem gafanhoto, mas você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
         scoreText.innerHTML = scoreTag;
     }
- //   else{
- //       let scoreTag = '<span>Sinto muito gafanhoto, você obteve apenas <p>'+ userScore //+'</p> de <p>'+ questions.length +'</p></span>';
- //       scoreText.innerHTML = scoreTag;
- //   }
 }
 
 function startTimer(time){
@@ -166,10 +148,10 @@ function startTimer(time){
         time--;
         if(time < 9){
             let addZero = timeCount.textContent;
-            timeCount.textContent = "0" + addZero
+            timeCount.textContent = "0" + addZero;
         }
         if(time < 0){
-            clearInterval(counter)
+            clearInterval(counter);
             timeCount.textContent = "00";
             timeOff.textContent = "Tempo esgotado";
 
@@ -205,6 +187,6 @@ function startTimerLine(time){
 
 function questCont(index) {
     const cont_quest_rodape = caixa_quiz.querySelector(".total_questoes");
-    let totalQuestContTag = '<span><p>' + index + '</p>de<p>' + questions.length + '</p>Perguntas</span>'
+    let totalQuestContTag = '<span><p>' + index + '</p>de<p>' + questions.length + '</p>Perguntas</span>';
     cont_quest_rodape.innerHTML = totalQuestContTag;
 }
