@@ -1,5 +1,5 @@
 # CodeQuiz 💡
-O CodeQuiz é um pequeno site de perguntas relacionado a Tecnologia
+O CodeQuiz é um pequeno site de perguntas relacionadas a Tecnologia
  
 ##
  
