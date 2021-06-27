@@ -136,7 +136,7 @@ function showResultBox(){
         scoreText.innerHTML = scoreTag;
     }
     else if(userScore <= 5){
-        let scoreTag = '<span>Sinto muito jovem gafanhoto, mas você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
+        let scoreTag = '<span>Mas não foi dessa vez jovem gafanhoto, você obteve apenas <p>'+ userScore +'</p> de <p>'+ questions.length +'.</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
